@@ -1,0 +1,16 @@
+PODS:
+  - Smooch (10.1.3)
+
+DEPENDENCIES:
+  - Smooch
+
+SPEC REPOS:
+  trunk:
+    - Smooch
+
+SPEC CHECKSUMS:
+  Smooch: c50fedfbe6f27fb54f8f12ca9e1d5c4a4031d9dc
+
+PODFILE CHECKSUM: ee1154ac39e793031e22764aa66fc1556adf366d
+
+COCOAPODS: 1.11.3
