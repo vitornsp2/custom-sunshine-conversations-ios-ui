@@ -31,7 +31,11 @@ class ViewController: UIViewController, UITableViewDataSource, SKTConversationDe
         if let messages = Smooch.conversation()?.messages {
             self.items = messages
         }
-        Smooch.conversation()?.delegate = self
+      
+        //Smooch.conversation()?.delegate = self
+        
+        let delegate = self
+        Smooch.update(delegate)
     }
     
     var items: [Any] = []
@@ -44,7 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, SKTConversationDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath)
         
         let message = items[indexPath.row] as! SKTMessage
-        let text = message.role == "appMaker" ? "\(message.displayName!) says \(message.text!)" : message.text!
+        let text = message.role == "business" ? "\(message.displayName!) says \(message.text!)" : message.text!
 
         cell.textLabel!.text = text
         return cell
