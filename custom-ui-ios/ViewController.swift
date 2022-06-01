@@ -67,5 +67,9 @@ class ViewController: UIViewController, UITableViewDataSource, SKTConversationDe
         
         conversationHistory.reloadData()
     }
+    
+    func conversation(_ conversation: SKTConversation, shouldShowInAppNotificationFor message: SKTMessage) -> Bool {
+          false
+        }
 }
 

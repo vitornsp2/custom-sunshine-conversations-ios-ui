@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Smooch.initWith(SKTSettings(integrationId: "62843b2400169400f58d192b"))
+        let settings = SKTSettings(integrationId: "62843b2400169400f58d192b")
+        settings.enableAppDelegateSwizzling = false
+        settings.enableUserNotificationCenterDelegateOverride = false
+        
+        Smooch.initWith(settings)
         return true
     }
 
