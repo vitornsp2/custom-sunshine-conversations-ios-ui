@@ -70,6 +70,24 @@ class ViewController: UIViewController, UITableViewDataSource, SKTConversationDe
     
     func conversation(_ conversation: SKTConversation, shouldShowInAppNotificationFor message: SKTMessage) -> Bool {
           false
+    }
+    
+    func conversation(_ conversation: SKTConversation, didReceive activity: SKTConversationActivity) {
+        switch activity.type {
+        case SKTConversationActivityTypeTypingStart:
+            print("start typing")
+            break
+        case SKTConversationActivityTypeTypingStop:
+            print("stop typing")
+            break
+        case SKTConversationActivityTypeConversationRead:
+            print("conversation read")
+            break
+        default:
+            print("default")
+            break
         }
+    }
+    
 }
 
